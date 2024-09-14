@@ -1,0 +1,63 @@
+.Navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 0px;
+    padding: 0px 50px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.Navbar.hidden {
+    transform: translateY(-100%);
+}
+
+
+.Navbar a{
+    margin: 25px;
+    text-decoration: none;
+    color: var(--text);
+    transition: 0.1s;
+    background: transparent;
+}
+.Navbar h1{
+    margin: 0;
+}
+.Navbar ul{
+    display: flex;
+    list-style-type: none;
+    border-radius: 50px;
+    border: 1px solid var(--secondary);
+    padding: 15px;
+    transition: 0.1s;
+    background: none;
+}
+.Navbar button{
+    background-color: transparent;
+    color: var(--text);
+    border: 2px solid var(--secondary);
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+/*-------Hovers------------------------*/
+.Navbar ul:hover{
+    box-shadow: 0 0 20px 0px var(--secondary);
+    transition: 0.1s;
+}
+.Navbar button:hover{
+    box-shadow: 0 0 20px 0px var(--accent);
+    transition: 0.1s;
+}
+.Navbar a:hover{
+    text-shadow: 0 0 20px var(--accent);
+    color: var(--accent);
+    transition: 0.1s;
+}
