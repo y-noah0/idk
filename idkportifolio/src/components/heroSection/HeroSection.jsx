@@ -1,4 +1,5 @@
 import style from './HeroSection.module.css'
+import placeholder from '../../assets/images/pexels-pixabay-38519.jpg'
 
 
 function HeroSection() {
@@ -9,7 +10,7 @@ function HeroSection() {
                 <p>Our design solutions ensure your brand stands out with a modern, professional appearance that resonates with your customerbase</p>
             </div>
             <div className={style.image_container}>
-                <img src="placeholder" alt="" />
+                <img src={placeholder} alt="" />
             </div>
         </div>
     )

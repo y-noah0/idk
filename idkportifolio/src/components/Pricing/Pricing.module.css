@@ -1,0 +1,116 @@
+/* src/PricingPage.module.css - Updated for Dark Theme */
+.pricingSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0b0c14;  /* Deep navy or dark black color */
+    color: #ffffff;  /* White text for dark background */
+    padding: 50px 20px;
+}
+
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #ffffff; /* White title */
+}
+
+.description {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #cccccc;  /* Light grey for description text */
+    max-width: 600px;
+}
+
+.pricingCards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #1a1b29;  /* Dark card background */
+    border: 1px solid #333;  /* Slightly lighter dark border */
+    border-radius: 10px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);  /* Dark shadow */
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.popularBadge {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #00b894;  /* Neon green for most popular badge */
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.popular {
+    border: 2px solid #00b894;  /* Neon green border for popular card */
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.planName {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffffff;  /* White text */
+}
+
+.price {
+    font-size: 2rem;
+    color: #ffffff;  /* White text */
+}
+
+.perMonth {
+    font-size: 1rem;
+    color: #cccccc;  /* Light grey text */
+}
+
+.details {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.details h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #ffffff;  /* White headers */
+}
+
+.details ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.details ul li {
+    margin-bottom: 8px;
+    color: #cccccc;  /* Light grey for details */
+}
+
+.chooseButton {
+    background-color: #00b894;  /* Neon green button */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chooseButton:hover {
+    background-color: #019874;  /* Slightly darker on hover */
+}

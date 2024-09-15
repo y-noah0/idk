@@ -1,0 +1,149 @@
+:root {
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+    --animation-direction: forwards;
+    --animation-duration: 40s;
+    --clr: #3b82f6; /* Define a color for the circle background */
+  }
+  
+  /* Main scroller container */
+  .scroller {
+    height: 500px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+    max-width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+  }
+  
+  /* Flex container for the scrolling items */
+  .flexContainer {
+    display: flex;
+    min-width: 100%;
+    height: 50%;
+    gap: 1rem;
+    flex-shrink: 0;
+    gap: 1rem;
+    padding: 1rem 0;
+    width: max-content;
+    flex-wrap: nowrap;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Each individual card */
+  .scrollerItem {
+    width: 350px;
+    max-width: 100%;
+    position: relative;
+    border-radius: 1rem;
+    border: 1px solid #94a3b8;
+    padding: 1.5rem;
+    background: linear-gradient(180deg, var(--slate-800), var(--slate-900));
+  
+    /* Use flexbox to center the content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    /* Add transition for smooth scaling and background */
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    overflow: hidden; /* Hide the overflowing circle effect */
+    opacity: 1;
+  }
+  
+  /* Add the pseudo-element for the circle effect */
+  .scrollerItem::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--clr); /* Use the defined color */
+    transition: width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease;
+    z-index: -1; /* Place the circle behind the content */
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Hover effect: zoom, shadow, and expand the circle */
+  .scrollerItem:hover {
+    z-index: 10;
+    transform: scale(1.4);  /* Zoom in more since it's the only focused card */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);  /* Stronger shadow for focus */
+  }
+  
+  /* Expand the circle on hover */
+  .scrollerItem:hover::before {
+    width: 120%;
+    height: 120%;
+    border-radius: 20px; /* Set a rounded rectangle effect */
+    top: 50%;
+    left: 50%;
+  }
+  
+  /* When a card is hovered, dim and scale down all the other cards */
+  .scrollerItem:not(:hover) {
+    transform: scale(0.8);  /* Scale down the other cards */
+    opacity: 0.3;  /* Lower opacity to make them less visible */
+  }
+  
+  /* Blockquote and text styles */
+  .blockquote {
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center; /* Center the text */
+  }
+  
+  .quote {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-bottom: 1rem;
+    color: #f1f5f9; /* Lighten the text color for dark mode readability */
+    text-align: center; /* Center the text */
+  }
+  
+  /* Initially hide the author info */
+  .authorInfo {
+    opacity: 0; /* Invisible */
+    visibility: hidden; /* Prevents interaction */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    text-align: center; /* Center the author info */
+  }
+  
+  /* Show the author info when hovered */
+  .scrollerItem:hover .authorInfo {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Allow interaction */
+  }
+  
+  /* Author name and title styles */
+  .authorName {
+    font-size: 0.875rem;
+    color: #e2e8f0; /* Slightly lighter text for author name */
+  }
+  
+  .authorTitle {
+    font-size: 0.75rem;
+    color: #cbd5e1; /* Lighter text for author title */
+  }
+  
+  /* Animations */
+  @keyframes scroll {
+    to {
+      transform: translateX(calc(-50% - 0.5rem));
+    }
+  }
+  
+  /* Animation class for the scrolling effect */
+  .animateScroll {
+    animation: scroll var(--animation-duration) linear infinite var(--animation-direction);
+  }
+  
+  /* Pause animation on hover */
+  .animateScroll:hover {
+    animation-play-state: paused;
+  }

@@ -1,0 +1,33 @@
+.HeroSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 100px 0px 0px; /* Add margin-top to push the Hero section down */
+    padding: 0px 50px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.word_container{
+    width: 50%;
+    font-size: 2rem;
+    color: white;
+}
+.word_container h1{
+    font-size: 3.5rem;
+}
+.word_container p {
+    font-size: 1.5rem;
+}
+.image_container{
+    width: 50%;
+    margin-left: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image_container img{
+    width: 80%;
+    border-radius: 20px;
+}
