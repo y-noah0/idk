@@ -1,3 +1,8 @@
+.container{
+    background-image: url('../../assets/images//Hero/herobg.png');
+    background-size: cover;
+    background-position: center;
+}
 .HeroSection {
     display: flex;
     justify-content: space-between;
@@ -5,10 +10,7 @@
     padding-left: 90px;
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
-    background-size: cover;
-    background-position: center;
     border-bottom-right-radius: 15px;
-    background-image: url('../../assets/images//Hero/herobg.png'); /* Default background image */
 }
 
 .word_container {

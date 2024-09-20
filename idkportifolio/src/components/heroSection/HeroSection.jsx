@@ -2,10 +2,27 @@ import style from './HeroSection.module.css';
 import placeholder from '../../assets/images/Hero/hero.png';
 import Button from '../Defaults/CTA/button';
 import Trustedby from './trustedby';
+import { gsap } from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { useRef, useEffect } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 function HeroSection() {
+    const imageContainer = useRef(null);
+
+    useEffect(() => {
+        gsap.to(imageContainer.current, {
+            duration: 3,
+            y: 70,
+            ease: 'ease',
+            yoyo: true,
+            repeat: -1
+        });
+    }, []);
+
     return (
-        <>
+        <div className={style.container}>
             <div className={style.HeroSection}>
                 <div className={style.word_container}>
                     <p className={style.promo}><span>New </span>Our Prices Just Dropped 30% Off</p>
@@ -13,12 +30,12 @@ function HeroSection() {
                     <p>Streamline operations and boost growth with our tailored software solutions. We help you succeed in the digital age.</p>
                     <Button>Get Started</Button>
                 </div>
-                <div className={style.image_container}>
-                    <img src={placeholder} alt="" />
+                <div className={style.image_container} ref={imageContainer}>
+                    <img src={placeholder} alt="Hero" />
                 </div>
             </div>
-            <Trustedby/>
-        </>
+            <Trustedby />
+        </div>
     );
 }
 
