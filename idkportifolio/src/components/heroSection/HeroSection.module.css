@@ -1,33 +1,86 @@
 .HeroSection {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin: 100px 0px 0px; /* Add margin-top to push the Hero section down */
-    padding: 0px 50px;
+    margin-top: 85px; /* Add margin-top to push the Hero section down */
+    padding-left: 90px;
     transition: transform 0.3s ease-in-out;
     z-index: 1000;
-    backdrop-filter: blur(5px);
+    background-size: cover;
+    background-position: center;
+    border-bottom-right-radius: 15px;
+    background-image: url('../../assets/images//Hero/herobg.png'); /* Default background image */
 }
 
-.word_container{
+.word_container {
     width: 50%;
     font-size: 2rem;
     color: white;
+    padding: 20px 20px;
 }
-.word_container h1{
-    font-size: 3.5rem;
+
+.word_container .promo {
+    display: flex;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 16px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    width: fit-content;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--primary);
 }
+
+.word_container .promo span {
+    background-color: var(--secondary);
+    border-radius: 20px;
+    padding: 3px;
+    text-align: center;
+    color: var(--background);
+}
+
+.word_container h1 {
+    font-size: 60px;
+    background: linear-gradient(-240deg, rgb(209, 207, 207) 2%, rgb(205, 205, 205) 98%);
+    -webkit-background-clip: text; /* Ensures compatibility with WebKit browsers */
+    background-clip: text;
+    color: transparent;
+}
+
 .word_container p {
-    font-size: 1.5rem;
+    font-size: 20px;
+    opacity: 70%;
 }
-.image_container{
+
+.image_container {
     width: 50%;
-    margin-left: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-right: 100px;
 }
-.image_container img{
-    width: 80%;
+
+.image_container img {
+    width: 100%;
     border-radius: 20px;
+}
+
+@media (max-width: 786px) {
+    .HeroSection {
+        background-image: url('../../assets/images//Hero/herobgtab.png'); /* Tablet background image */
+        padding-left: 30px;
+    }
+    .image_container{
+        display: none;
+    }
+    .word_container {
+        width: 100%;
+        padding-bottom: 60px;
+        padding-left: 0px;
+    }
+    .word_container h1 {
+        font-size: 56px;
+    }
+    .word_container p {
+        font-size: 20px;
+    }
 }

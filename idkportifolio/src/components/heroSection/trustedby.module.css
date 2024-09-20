@@ -1,0 +1,20 @@
+.trustedby{
+    height: 80px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.trustedby img{
+    height: 50px;
+}
+.trustedby .word_container{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+.trustedby .logo_container{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}

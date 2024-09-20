@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import style from './Navbar.module.css';
+import logo from '../../../assets/logo.png';
 
 function Navbar() {
     const [visible, setVisible] = useState(true);
@@ -18,11 +19,11 @@ function Navbar() {
 
     return (
         <div className={`${style.Navbar} ${visible ? '' : style.hidden}`}>
-            <h1>site<sup>.</sup></h1>
+            <img src={logo} alt="Logo" />
             <ul>
                 <li><a href="/">Home</a></li>
-                <li><a href="/pricing">Pricing</a></li>
                 <li><a href="/features">Features</a></li>
+                <li><a href="/pricing">Pricing</a></li>
                 <li><a href="/about">About</a></li>
             </ul>
             <button>Get Started</button>
