@@ -1,0 +1,37 @@
+.word_container p{
+    color: white;
+    font-size: 32px;
+    width: 50%;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    width: 407px;
+    height: 293px;
+    background-color: var(--primary);
+}
+.card .titlebar{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    padding: 15px;
+}
+.card .titlebar img{
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+}
+.card .titlebar p{
+    font-size: 24px;
+    color: #fff;
+    margin-left: 20px;
+}
+.quote{
+    display: flex;
+    font-size: 20px;
+    color: #fff;
+}
+.title{
+    font-style: italic;
+}

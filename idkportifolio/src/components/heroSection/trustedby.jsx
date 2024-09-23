@@ -11,11 +11,11 @@ function Trustedby (){
 
     useEffect(() => {
         gsap.to(logo.current,{
-            x: 300,
-            repeat: -1,
-            ease: 'ease-in-out',
-            duration: 2,
-            yoyoEase: true
+            duration: 3,
+            x:300,
+            ease: 'ease',
+            yoyo: true,
+            repeat: -1
         })
     })
     return (

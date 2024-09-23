@@ -1,10 +1,10 @@
 import style from './HeroSection.module.css';
 import placeholder from '../../assets/images/Hero/hero.png';
-import Button from '../Defaults/CTA/button';
 import Trustedby from './trustedby';
 import { gsap } from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import { useRef, useEffect } from 'react';
+import Button from '../Defaults/Button/button';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,7 +14,7 @@ function HeroSection() {
     useEffect(() => {
         gsap.to(imageContainer.current, {
             duration: 3,
-            y: 70,
+            y: 50,
             ease: 'ease',
             yoyo: true,
             repeat: -1

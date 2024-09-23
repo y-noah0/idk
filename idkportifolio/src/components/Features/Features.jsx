@@ -1,29 +1,16 @@
-import React from "react";
-import { Cards } from "./cards/Cards";
+import style from './Features.module.css'
+import image from '../../assets/images/Features/image.png'
+import Cards from './cards/Cards';
 
-export function Features() {
+
+function Features(){
   return (
-    <div className="container">
-      <Cards items={testimonials} direction="right" speed="slow" />
+    <div className={style.container}>
+        <p>Everything You Need!</p>
+        <h3>Leverage cutting-edge software to simplify business operations and <br />drive growth.</h3>
+        <img src={image} alt="" />
+        <Cards/>
     </div>
-  );
+  )  
 }
-
-const testimonials = [
-  {
-    quote: "It was the best of times...",
-    name: "Charles Dickens",
-    title: "A Tale of Two Cities",
-  },
-  {
-    quote: "To be, or not to be...",
-    name: "William Shakespeare",
-    title: "Hamlet",
-  },
-  {
-    quote: "All that we see or seem...",
-    name: "Edgar Allan Poe",
-    title: "A Dream Within a Dream",
-  },
-  
-];
+export default Features;
