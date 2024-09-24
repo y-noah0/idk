@@ -1,0 +1,152 @@
+/* Cards.module.css */
+
+:root {
+    --slate-800: #1e293b;
+    --slate-900: #0f172a;
+    --animation-direction: forwards;
+    --animation-duration: 40s;
+    --clr: #3b82f6; /* Define a color for the circle background */
+  }
+  
+  /* Main scroller container */
+  .scroller {
+    height: 500px; /* Decreased height to reduce the vertical space */
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 20;
+    max-width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+  }
+  
+  /* Flex container for the scrolling items */
+  .flexContainer {
+    display: flex;
+    min-width: 100%;
+    height: auto; /* Reset the height to auto to allow the cards to stack vertically */
+    gap: 2rem;
+    flex-shrink: 0;
+    padding: 1rem 0;
+    width: max-content;
+    flex-wrap: wrap; /* Change to wrap to stack the cards vertically */
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Each individual card */
+  .scrollerItem {
+    width: 260px; /* Decreased width to make the card more vertical */
+    height: 400px; /* Decreased height to reduce the vertical space */
+    max-width: 100%;
+    position: relative;
+    border-radius: 1.5rem;
+    border: 1px solid #94a3b8;
+    padding: 2rem;
+    background: linear-gradient(180deg, var(--slate-800), var(--slate-900));
+  
+    /* Use flexbox to center the content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    /* Add transition for smooth scaling and background */
+    transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    overflow: hidden; /* Hide the overflowing circle effect */
+    opacity: 1;
+  }
+  
+  /* Add the pseudo-element for the circle effect */
+  .scrollerItem::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: var(--slate-900); /* Use the defined color */
+    transition: width 0.5s ease, height 0.5s ease, top 0.5s ease, left 0.5s ease;
+    z-index: -1; /* Place the circle behind the content */
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Hover effect: zoom, shadow, and expand the circle */
+  .scrollerItem:hover {
+    z-index: 10;
+    transform: scale(1.05); /* Slightly smaller zoom on hover */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Expand the circle on hover */
+  .scrollerItem:hover::before {
+    width: 110%;
+    height: 110%; /* Decreased height to match the card size */
+    border-radius: 30px;
+    top: 50%;
+    left: 50%;
+  }
+  
+  /* When a card is hovered, dim and scale down all the other cards */
+  .scrollerItem:not(:hover) {
+    transform: scale(0.95); /* Slightly smaller scale for the other cards */
+    opacity: 0.5;
+  }
+/*************  ✨ Codeium Command ⭐  *************/
+/******  8bde8f98-eb38-43f0-b0dc-90964933fb53  *******/
+  /* Blockquote and text styles */
+  .blockquote {
+    font-size: 1.125rem; /* Increased font size to match the card design */
+    color: #ffffff;
+    text-align: center; /* Center the text */
+  }
+  
+  .quote {
+    font-size: 1.5rem; /* Increased font size to match the card design */
+    line-height: 2rem; /* Increased line height to match the card design */
+    margin-bottom: 1.5rem; /* Increased margin-bottom to match the card design */
+    color: #f1f5f9; /* Lighten the text color for dark mode readability */
+    text-align: center; /* Center the text */
+  }
+  
+  /* Initially hide the author info */
+  .authorInfo {
+    opacity: 0; /* Invisible */
+    visibility: hidden; /* Prevents interaction */
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    text-align: center; /* Center the author info */
+  }
+  
+  /* Show the author info when hovered */
+  .scrollerItem:hover .authorInfo {
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Allow interaction */
+  }
+  
+  /* Author name and title styles */
+  .authorName {
+    font-size: 1rem; /* Increased font size to match the card design */
+    color: #e2e8f0; /* Slightly lighter text for author name */
+  }
+  
+  .authorTitle {
+    font-size: 0.875rem; /* Increased font size to match the card design */
+    color: #cbd5e1; /* Lighter text for author title */
+  }
+  
+  /* Animations */
+  @keyframes scroll {
+    to {
+      transform: translateX(calc(-50% - 1rem)); /* Increased translation distance to match the card design */
+    }
+  }
+  
+  /* Animation class for the scrolling effect */
+  .animateScroll {
+    animation: scroll var(--animation-duration) linear infinite var(--animation-direction);
+  }
+  
+  /* Pause animation on hover */
+  .animateScroll:hover {
+    animation-play-state: paused;
+  }

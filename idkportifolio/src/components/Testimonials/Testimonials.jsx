@@ -1,22 +1,32 @@
-import style from './Testimonials.module.css';
+import React from "react";
+import { Cards } from "./cards/Cards";
 
-function Testimonials(){
-  return(
-    <div className={style.container}>
-      <div className={style.word_container}><p>Over 23+ <br />Happy Clients</p></div>
-      <div className={style.card_container}>
-        <div className={style.card}>
-          <div className={style.titlebar}>
-            <img src="https://via.placeholder.com/150" alt="What brioche thinks about idk" />
-            <p>Amanda Nelson</p>
-          </div>
-          <p className={style.quote}>&quot;I absolutely love using idk! It&#39;s a great way to build innovative solutions without having to worry about the details.&quot;</p>
-          <p className={style.title}>CEO, BRIOCHE</p>
-        </div>
-        </div>
+ function Testimonials() {
+  return (
+    <div className="container">
+      <Cards items={testimonials} direction="right" speed="slow" />
     </div>
-  )
-  
+  );
 }
+
+const testimonials = [
+  {
+    quote: "It was the best of times...",
+    name: "Charles Dickens",
+    title: "A Tale of Two Cities",
+  },
+  {
+    quote: "To be, or not to be...",
+    name: "William Shakespeare",
+    title: "Hamlet",
+  },
+  {
+    quote: "All that we see or seem...",
+    name: "Edgar Allan Poe",
+    title: "A Dream Within a Dream",
+  },
+  
+];
+
 
 export default Testimonials;
